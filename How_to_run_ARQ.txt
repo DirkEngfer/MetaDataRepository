@@ -1,0 +1,1 @@
+arq --data test.ttl --query test.rq > query_out.txt

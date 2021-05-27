@@ -1,0 +1,43 @@
+@prefix d: <http://companylink.de/ns#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+d:SDTM d:ActualSDTMVersion "2.2.4" .
+d:SDTM rdfs:label "Study Data Tabulation Model" .
+
+d:CM rdf:type d:Domain .
+
+d:CMTRT d:Core "required" .
+d:CMTRT d:Length "$200" .
+d:CMTRT d:DType "char" .
+d:CMTRT rdfs:label "Reported Name of Drug, Med, or Therapy" .
+d:CMTRT rdf:type d:SASVar .
+d:CMTRT d:WithDomain d:CM .
+d:CMTRT d:WithSDTMVersion "2.2.4" .
+d:CMTRT d:OrderNumber "5" .
+
+d:CMDECOD rdf:type d:SASVar .
+d:CMDECOD d:WithDomain d:CM .
+d:CMDECOD d:WithSDTMVersion "2.2.4" .
+d:CMDECOD d:OrderNumber "6" .
+
+d:CMSEQ rdf:type d:SASVar .
+d:CMSEQ d:WithDomain d:CM .
+d:CMSEQ d:WithSDTMVersion "2.2.4" .
+d:CMSEQ d:OrderNumber "4" .
+
+d:STUDYID rdf:type d:SASVar .
+d:STUDYID d:WithDomain d:CM .
+d:STUDYID d:WithSDTMVersion "2.2.4" .
+d:STUDYID d:OrderNumber "1" .
+
+d:DOMAIN rdf:type d:SASVar .
+d:DOMAIN d:WithDomain d:CM .
+d:DOMAIN d:WithSDTMVersion "2.2.4" .
+d:DOMAIN d:OrderNumber "2" .
+
+d:USUBJID rdf:type d:SASVar .
+d:USUBJID d:WithDomain d:CM .
+d:USUBJID d:WithSDTMVersion "2.2.4" .
+d:USUBJID d:OrderNumber "3" .
+

@@ -1,0 +1,4 @@
+- Here, the metadata repository consists of Turtle files (.ttl).
+- Database query code resides in .rq files.
+- Queries need to be issued against the SPARQL engine ARQ that is shipped with the RDF framework Apache Jena. Execution happens on the Linux terminal.
+- Output: Application consumable metadata are generated and saved to .txt files in the same directory. They drive SAS programs and should be considered part of the program.

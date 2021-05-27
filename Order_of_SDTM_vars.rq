@@ -1,0 +1,12 @@
+PREFIX d: <http://companylink.de/ns#>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+select ?s ?SortNum
+where
+{
+ ?s rdf:type d:SASVar ;
+    d:WithDomain d:CM ;
+    d:OrderNumber ?SortNum ;
+    d:WithSDTMVersion "2.2.4" .
+}

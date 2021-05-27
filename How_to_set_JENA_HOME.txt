@@ -1,0 +1,5 @@
+export JENA_HOME=/home/dirk/jena/apache-jena-4.0.0
+cd $JENA_HOME
+pwd
+bin/sparql --version
+export PATH=$PATH:$JENA_HOME/bin
