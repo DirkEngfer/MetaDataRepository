@@ -1,0 +1,14 @@
+PREFIX d: <http://companylink.de/ns#>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+# Get metadata (Timepart properties for Index and string length) for the conversion of SDTM.*DTC into ADaM.ATM variable in SAS: ATM = input(substr(CMSTDTC,Startpos, Length_of_substring),is8601tm.); 
+
+select ?var ?IndexStart ?Len
+where
+{
+ ?var d:Has_Converter d:DTC_Timepart ;
+      rdf:type d:SASVar .
+ d:DTC_Timepart d:ReadsTimepartAtPos ?IndexStart ;
+                d:ReadsTimepartLen ?Len .
+}
