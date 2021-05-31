@@ -1,0 +1,6 @@
+In my eyes succeeding in the automation of chaining SDTM / ADaM /TFL etc requires all metadata content upfront that goes with the
+define.xml. But this is not sufficient, we need more. With my example pathway I hope to demonstrate how to setup useful metadata beyond of what is inside Define.xml.
+It is my conviction to not handle SAS program statements with the MDR because I want to describe properties of variables, datasets, codelists and the like.
+The focus is on handling what the data item is about, not on what we can do with it.
+Specification of standard program logic may be approached with other routines/techniques.
+

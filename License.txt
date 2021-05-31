@@ -1,2 +1,2 @@
-This approach of building up a MDR is non-proprietary though you are free to integrate it into your business logic.
+This approach of building up a MDR is non-proprietary i.e. home grown with all my professional experience over many years thus, you are free to incorporate it into your business logic.
 Apache Jena, ARQ, Sparql, Turtle, Python, SAS, Linux, CDISC are trademarks of their respective owners.
