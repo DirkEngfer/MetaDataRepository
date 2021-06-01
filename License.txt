@@ -1,2 +1,6 @@
+Update JUN 1, 2021 - New License as per link (CreativeCommons):
+                     https://creativecommons.org/licenses/by/3.0/
+
+
 This approach of building up a MDR is non-proprietary i.e. home grown with all my professional experience over many years thus, you are free to incorporate it into your business logic.
 Apache Jena, ARQ, Sparql, Turtle, Python, SAS, Linux, CDISC are trademarks of their respective owners.
