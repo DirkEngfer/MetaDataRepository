@@ -1,8 +1,8 @@
 Source for the metadata repository (MDR):
-   test.ttl
+   test.ttl, <somefile>.ttl
 
 Source for database query code:
-   test.rq
+   test.rq, <somefile>.rq
 
 To run the process i.e. pull out needed metadata from the MDR:
   At the Linux terminal execute the command "sh run.sh".
@@ -10,6 +10,7 @@ To run the process i.e. pull out needed metadata from the MDR:
 Outputs by the above shell script:
   - SDTM_CM_variables_sort_order.txt
   - SDTM_CM_variables.txt
+  - <somefile>.txt
 
 Further step(s):
   Write a SAS program that reads in the above generated .txt metadata (e.g. via INFILE and INPUT statement) to map data for SDTM or other standardized purposes.
