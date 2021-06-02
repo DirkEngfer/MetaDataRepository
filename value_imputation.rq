@@ -1,0 +1,24 @@
+PREFIX d: <http://companylink.de/ns#>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+
+# Query to select metadata corresponding to SAP or ADaM spec that provides the exchange value per parameter (imputation) on ADLB.AVAL.
+# The query result gives direction to the SAS program to implement the selected business rule like so:
+# Pseudo code: IF PARAMCD = "CGLUCHBS" AND LBSTRESC indicates a value BQL THEN AVAL = 0;  
+
+# Inspiration from:
+# If the result contains a below quantifiable limit (BQL)  or above quantifiable limit (AQL) value and a formula is implemented to convert
+# these values to a numeric value, then AVALC should not be populated with the BQL/AQL result.  Instead --STRESC should be brought over
+#to show data point traceability and AVALC left null so that AVAL can be populated using the formula.  This allows the 1-1 match
+#between AVAL and AVALC to be maintained.
+# Source: https://www.lexjansen.com/wuss/2017/79_Final_Paper_PDF.pdf , page 7, paragraph: "Recommendations", item 1.
+
+
+select ?paramvar ?paramname ?imputation_rule ?imputed_value
+where
+{
+ ?paramvar d:HasValue ?paramname .
+ ?paramname d:Has_Imputation ?rule .
+ ?rule ?imputation_rule ?imputed_value .
+}

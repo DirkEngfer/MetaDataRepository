@@ -1,0 +1,17 @@
+@prefix d: <http://companylink.de/ns#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Value imputation rules acc. to specifications (SAP or Protocol):
+
+d:ADLB.PARAMCD d:HasParameter d:Blood_Glucose ;
+             d:HasValue d:CGLUCHBS .
+
+d:CGLUCHBS rdfs:label "Blood Glucose Using Home Test Meter (mmol/L)" ;
+               rdf:type d:Parameter ;
+               d:Has_Imputation d:LLOQ2Zero .
+
+d:LLOQ2Zero d:ReplaceLLOQBy "0"^^xsd:integer .
+
+

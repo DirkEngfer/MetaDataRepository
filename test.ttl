@@ -41,3 +41,17 @@ d:USUBJID d:WithDomain d:CM .
 d:USUBJID d:WithSDTMVersion "2.2.4" .
 d:USUBJID d:OrderNumber "3" .
 
+d:CMSTDTC rdf:type d:SASVar .
+d:CMSTDTC d:WithDomain d:CM .
+d:CMSTDTC d:WithSDTMVersion "2.2.4" .
+d:CMSTDTC d:OrderNumber "7" .
+
+d:CMENDTC rdf:type d:SASVar .
+d:CMENDTC d:WithDomain d:CM .
+d:CMENDTC d:WithSDTMVersion "2.2.4" .
+d:CMENDTC d:OrderNumber "8" .
+
+d:ADPC.PARAM rdf:type d:SASVar .
+d:ADPC.PARAM d:WithDomain d:PC .
+
+
