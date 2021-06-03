@@ -1,0 +1,21 @@
+PREFIX d: <http://companylink.de/ns#>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+
+# Ask for metadata on imputation of missing day of **ENDTC values.
+# It should automatically select either study specific rule otherwise global business rule
+# Thus, no manual lookup needed to implement the correct imputation rule:
+
+select ?s ?rule ?var ?day
+where
+{
+?s rdfs:label "abc" ;
+   rdf:type d:Study ;
+   d:Has_Imputation ?rule .
+?rule d:Impute_By ?day .
+?rule d:ApplicableTo ?var .
+# Note the first imputation rule ends on "S" indicating the study specific context rather than global business rule.
+ OPTIONAL { ?s d:Has_Imputation d:ImputeMissingEndDayS }
+ OPTIONAL { ?s d:Has_Imputation d:ImputeMissingEndDay }
+}

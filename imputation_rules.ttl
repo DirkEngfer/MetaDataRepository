@@ -3,7 +3,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-# Value imputation rules acc. to specifications (SAP or Protocol):
+# Value imputation rules acc. to specifications (SAP or Protocol, Global business rules):
 
 d:ADLB.PARAMCD d:HasParameter d:Blood_Glucose ;
              d:HasValue d:CGLUCHBS .
@@ -14,4 +14,20 @@ d:CGLUCHBS rdfs:label "Blood Glucose Using Home Test Meter (mmol/L)" ;
 
 d:LLOQ2Zero d:ReplaceLLOQBy "0"^^xsd:integer .
 
+### Date imputation for incomplets XXENDTC: Missing day imputed by last day of the month/study specific otherwise:
+
+d:ImputeMissingEndDay rdf:type d:GlobalImputation .
+d:ImputeMissingEndDay d:Impute_By "Middle_of_month" .
+d:ImputeMissingEndDay d:ApplicableTo d:CMENDTC .
+
+
+d:ImputeMissingEndDayS rdf:type d:StudySpecificImputation .
+d:ImputeMissingEndDayS d:Impute_By "Last_of_month" .
+d:ImputeMissingEndDayS d:ApplicableTo d:AEENDTC .
+
+# Declare study properties for study abc:
+d:abc rdfs:label "abc" ;
+      rdf:type d:Study ;
+      d:Has_Imputation d:ImputeMissingEndDayS ;
+      d:Has_Imputation d:ImputeMissingEndDay .
 

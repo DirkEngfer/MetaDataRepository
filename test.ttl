@@ -54,4 +54,7 @@ d:CMENDTC d:OrderNumber "8" .
 d:ADPC.PARAM rdf:type d:SASVar .
 d:ADPC.PARAM d:WithDomain d:PC .
 
+d:ADAE.AEENDTC rdf:type d:SASVar .
+d:ADAE.AEENDTC d:WithDomain d:AE .
+
 
