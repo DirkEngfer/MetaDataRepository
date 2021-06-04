@@ -4,8 +4,8 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 
 # Ask for metadata on imputation of missing day of **ENDTC values.
-# It should automatically select either study specific rule otherwise global business rule
-# Thus, no manual lookup needed to implement the correct imputation rule:
+# It should automatically select either study specific rule (=higher precedence) otherwise global business rule
+# Thus, no manual lookup needed to choose the correct imputation rule:
 
 select ?s ?rule ?var ?day
 where

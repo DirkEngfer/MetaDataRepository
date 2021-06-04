@@ -5,6 +5,7 @@
 
 # Value imputation rules acc. to specifications (SAP or Protocol, Global business rules):
 
+### Impute for value lower limit of quantification
 d:ADLB.PARAMCD d:HasParameter d:Blood_Glucose ;
              d:HasValue d:CGLUCHBS .
 

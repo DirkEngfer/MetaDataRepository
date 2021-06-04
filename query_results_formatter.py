@@ -1,9 +1,10 @@
 #!/usr/bin/env python
 # coding: utf-8
-import os
+import os, time
 
 out = open('q_out.txt', 'w')
-with open('SDTM_CM_variables.txt', 'rt') as f:
+outputname = 'SDTM_CM_variables.txt'
+with open(outputname, 'rt') as f:
   i = 0
   for line in f:
     if i >= 3:
@@ -12,11 +13,14 @@ with open('SDTM_CM_variables.txt', 'rt') as f:
         out.write(text)
     i +=1
 out.close()
-os.remove("./SDTM_CM_variables.txt")
-os.rename('q_out.txt', 'SDTM_CM_variables.txt')
+time.sleep(0.5)
+os.remove("./" + outputname)
+time.sleep(0.3)
+os.rename('q_out.txt', outputname)
 
 out = open('q_out.txt', 'w')
-with open('SDTM_CM_variables_sort_order.txt', 'rt') as f:
+outputname = 'SDTM_CM_variables_sort_order.txt'
+with open(outputname, 'rt') as f:
   i = 0
   for line in f:
     if i >= 3:
@@ -25,11 +29,14 @@ with open('SDTM_CM_variables_sort_order.txt', 'rt') as f:
         out.write(text)
     i +=1
 out.close()
-os.remove("./SDTM_CM_variables_sort_order.txt")
-os.rename('q_out.txt', 'SDTM_CM_variables_sort_order.txt')
+time.sleep(0.5)
+os.remove("./" + outputname)
+time.sleep(0.3)
+os.rename('q_out.txt', outputname)
 
 out = open('q_out.txt', 'w')
-with open('SDTM_Convert_CMSTDTC_to_ATM.txt', 'rt') as f:
+outputname = 'SDTM_Convert_CMSTDTC_to_ATM.txt'
+with open(outputname, 'rt') as f:
   i = 0
   for line in f:
     if i >= 3:
@@ -39,11 +46,14 @@ with open('SDTM_Convert_CMSTDTC_to_ATM.txt', 'rt') as f:
         out.write(text)
     i +=1
 out.close()
-os.remove("./SDTM_Convert_CMSTDTC_to_ATM.txt")
-os.rename('q_out.txt', 'SDTM_Convert_CMSTDTC_to_ATM.txt')
+time.sleep(0.5)
+os.remove("./" + outputname)
+time.sleep(0.3)
+os.rename('q_out.txt', outputname)
 
 out = open('q_out.txt', 'w')
-with open('EndDayImputation.txt', 'rt') as f:
+outputname = 'EndDayImputation.txt'
+with open(outputname, 'rt') as f:
   i = 0
   for line in f:
     if i >= 3:
@@ -53,6 +63,27 @@ with open('EndDayImputation.txt', 'rt') as f:
         out.write(text)
     i +=1
 out.close()
-os.remove("./EndDayImputation.txt")
-os.rename('q_out.txt', 'EndDayImputation.txt')
+time.sleep(0.5)
+os.remove("./" + outputname)
+time.sleep(0.3)
+os.rename('q_out.txt', outputname)
+
+
+out = open('q_out.txt', 'w')
+outputname = 'LLOQ.txt'
+with open(outputname, 'rt') as f:
+  i = 0
+  for line in f:
+    if i >= 3:
+      if line[0:1] == '|':
+        text = line.replace('|', '').replace('d:', '').replace('"', '')
+        text = ' '.join(filter(None,text.split(' ')))
+        out.write(text)
+    i +=1
+out.close()
+time.sleep(0.5)
+os.remove("./" + outputname)
+time.sleep(0.3)
+os.rename('q_out.txt', outputname)
+
 

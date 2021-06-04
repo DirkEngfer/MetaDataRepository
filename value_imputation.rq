@@ -7,7 +7,7 @@ prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 # The query result gives direction to the SAS program to implement the selected business rule like so:
 # Pseudo code: IF PARAMCD = "CGLUCHBS" AND LBSTRESC indicates a value BQL THEN AVAL = 0;  
 
-# Inspiration from:
+# Inspired from:
 # If the result contains a below quantifiable limit (BQL)  or above quantifiable limit (AQL) value and a formula is implemented to convert
 # these values to a numeric value, then AVALC should not be populated with the BQL/AQL result.  Instead --STRESC should be brought over
 #to show data point traceability and AVALC left null so that AVAL can be populated using the formula.  This allows the 1-1 match
