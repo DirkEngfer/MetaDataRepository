@@ -13,9 +13,9 @@ with open(outputname, 'rt') as f:
         out.write(text)
     i +=1
 out.close()
-time.sleep(0.5)
+#time.sleep(0.5)
 os.remove("./" + outputname)
-time.sleep(0.3)
+#time.sleep(0.3)
 os.rename('q_out.txt', outputname)
 
 out = open('q_out.txt', 'w')
@@ -29,9 +29,9 @@ with open(outputname, 'rt') as f:
         out.write(text)
     i +=1
 out.close()
-time.sleep(0.5)
+#time.sleep(0.5)
 os.remove("./" + outputname)
-time.sleep(0.3)
+#time.sleep(0.3)
 os.rename('q_out.txt', outputname)
 
 out = open('q_out.txt', 'w')
@@ -46,9 +46,9 @@ with open(outputname, 'rt') as f:
         out.write(text)
     i +=1
 out.close()
-time.sleep(0.5)
+#time.sleep(0.5)
 os.remove("./" + outputname)
-time.sleep(0.3)
+#time.sleep(0.3)
 os.rename('q_out.txt', outputname)
 
 out = open('q_out.txt', 'w')
@@ -63,9 +63,9 @@ with open(outputname, 'rt') as f:
         out.write(text)
     i +=1
 out.close()
-time.sleep(0.5)
+#time.sleep(0.5)
 os.remove("./" + outputname)
-time.sleep(0.3)
+#time.sleep(0.3)
 os.rename('q_out.txt', outputname)
 
 
@@ -81,9 +81,9 @@ with open(outputname, 'rt') as f:
         out.write(text)
     i +=1
 out.close()
-time.sleep(0.5)
+#time.sleep(0.5)
 os.remove("./" + outputname)
-time.sleep(0.3)
+#time.sleep(0.3)
 os.rename('q_out.txt', outputname)
 
 
