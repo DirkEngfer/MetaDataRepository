@@ -68,6 +68,23 @@ os.remove("./" + outputname)
 #time.sleep(0.3)
 os.rename('q_out.txt', outputname)
 
+out = open('q_out.txt', 'w')
+outputname = 'StartDayImputation.txt'
+with open(outputname, 'rt') as f:
+  i = 0
+  for line in f:
+    if i >= 3:
+      if line[0:1] == '|':
+        text = line.replace('|', '').replace('d:', '').replace('"', '')
+        text = ' '.join(filter(None,text.split(' ')))
+        out.write(text)
+    i +=1
+out.close()
+#time.sleep(0.5)
+os.remove("./" + outputname)
+#time.sleep(0.3)
+os.rename('q_out.txt', outputname)
+
 
 out = open('q_out.txt', 'w')
 outputname = 'LLOQ.txt'

@@ -1,0 +1,23 @@
+PREFIX d: <http://companylink.de/ns#>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+
+# Retrieve all imputation rules from the latest version of the SAP
+# Note: Imputation of missing start day differs in both SAP versions, day for replacement is the first of month vs. middle of month.
+# Retrieval of the latest SAP version happens automatically over the given selection conditions:
+select ?latest_SAP_version ?imputation_rule ?By
+where
+{
+  {
+    SELECT (MAX(?sap_version) as ?latest_SAP_version)
+    WHERE { ?sap d:version ?sap_version } 
+  }
+  {
+    ?sap a d:SAP .
+    ?sap d:Has_Imputation ?imputation_rule .
+    ?sap d:version ?latest_SAP_version .
+    ?imputation_rule d:Impute_what ?impute_what .
+    ?imputation_rule d:Impute_By ?By .
+  }
+}

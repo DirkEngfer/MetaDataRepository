@@ -5,7 +5,7 @@
 
 # Value imputation rules acc. to specifications (SAP or Protocol, Global business rules):
 
-### Impute for value lower limit of quantification
+### Impute value lower limit of quantification
 d:ADLB.PARAMCD d:HasParameter d:Blood_Glucose ;
              d:HasValue d:CGLUCHBS .
 
@@ -24,6 +24,7 @@ d:ImputeMissingEndDay d:ApplicableTo d:CMENDTC .
 
 d:ImputeMissingEndDayS rdf:type d:StudySpecificImputation .
 d:ImputeMissingEndDayS d:Impute_By "Last_of_month" .
+d:ImputeMissingEndDayS d:Impute_what "Missing end day" .
 d:ImputeMissingEndDayS d:ApplicableTo d:AEENDTC .
 
 # Declare study properties for study abc:
@@ -31,4 +32,27 @@ d:abc rdfs:label "abc" ;
       rdf:type d:Study ;
       d:Has_Imputation d:ImputeMissingEndDayS ;
       d:Has_Imputation d:ImputeMissingEndDay .
+
+# Declare+characterize SAP versions of study abc:
+d:abc d:goesWith d:sapV1 .
+d:abc d:goesWith d:sapV2 .
+
+# SAP versions:
+d:sapV1 a d:SAP .
+d:sapV1 d:version "1"^^xsd:integer .
+d:sapV1 d:Has_Imputation d:ImputeMissingStartDay1S .
+
+d:sapV2 a d:SAP .
+d:sapV2 d:version "2"^^xsd:integer .
+d:sapV2 d:Has_Imputation d:ImputeMissingStartDay2S .
+d:sapV2 d:Has_Imputation d:ImputeMissingEndDayS .
+
+d:ImputeMissingStartDay1S rdf:type d:StudySpecificImputation .
+d:ImputeMissingStartDay1S d:Impute_what "Missing start day" .
+d:ImputeMissingStartDay1S d:Impute_By "First_of_month" .
+
+d:ImputeMissingStartDay2S rdf:type d:StudySpecificImputation .
+d:ImputeMissingStartDay2S d:Impute_what "Missing start day" .
+d:ImputeMissingStartDay2S d:Impute_By "Middle_of_month" .
+
 
