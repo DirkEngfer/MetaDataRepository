@@ -25,7 +25,9 @@ d:ImputeMissingEndDay d:ApplicableTo d:CMENDTC .
 d:ImputeMissingEndDayS rdf:type d:StudySpecificImputation .
 d:ImputeMissingEndDayS d:Impute_By "Last_of_month" .
 d:ImputeMissingEndDayS d:Impute_what "Missing end day" .
+d:ImputeMissingEndDayS rdfs:label "If the partial date is a stop date, a '28/29/30/31' was used for the day (dependent on the month and year)" .
 d:ImputeMissingEndDayS d:ApplicableTo d:AEENDTC .
+d:ImputeMissingEndDayS d:ApplicableTo d:CMENDTC .
 
 # Declare study properties for study abc:
 d:abc rdfs:label "abc" ;

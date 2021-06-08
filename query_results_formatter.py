@@ -13,9 +13,7 @@ with open(outputname, 'rt') as f:
         out.write(text)
     i +=1
 out.close()
-#time.sleep(0.5)
 os.remove("./" + outputname)
-#time.sleep(0.3)
 os.rename('q_out.txt', outputname)
 
 out = open('q_out.txt', 'w')
@@ -29,9 +27,7 @@ with open(outputname, 'rt') as f:
         out.write(text)
     i +=1
 out.close()
-#time.sleep(0.5)
 os.remove("./" + outputname)
-#time.sleep(0.3)
 os.rename('q_out.txt', outputname)
 
 out = open('q_out.txt', 'w')
@@ -46,9 +42,7 @@ with open(outputname, 'rt') as f:
         out.write(text)
     i +=1
 out.close()
-#time.sleep(0.5)
 os.remove("./" + outputname)
-#time.sleep(0.3)
 os.rename('q_out.txt', outputname)
 
 out = open('q_out.txt', 'w')
@@ -58,14 +52,14 @@ with open(outputname, 'rt') as f:
   for line in f:
     if i >= 3:
       if line[0:1] == '|':
-        text = line.replace('|', '').replace('d:', '').replace('"', '')
-        text = ' '.join(filter(None,text.split(' ')))
+        text = line[1:].replace('d:', '').replace('|\n', '\n')
+        textL = text.split('|')
+        text = '|'.join([x.strip() for x in textL])
+        text = text + '\n'
         out.write(text)
     i +=1
 out.close()
-#time.sleep(0.5)
 os.remove("./" + outputname)
-#time.sleep(0.3)
 os.rename('q_out.txt', outputname)
 
 out = open('q_out.txt', 'w')
@@ -80,9 +74,7 @@ with open(outputname, 'rt') as f:
         out.write(text)
     i +=1
 out.close()
-#time.sleep(0.5)
 os.remove("./" + outputname)
-#time.sleep(0.3)
 os.rename('q_out.txt', outputname)
 
 
@@ -98,9 +90,7 @@ with open(outputname, 'rt') as f:
         out.write(text)
     i +=1
 out.close()
-#time.sleep(0.5)
 os.remove("./" + outputname)
-#time.sleep(0.3)
 os.rename('q_out.txt', outputname)
 
 

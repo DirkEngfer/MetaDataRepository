@@ -7,7 +7,7 @@ prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 # It should automatically select either study specific rule (=higher precedence) otherwise global business rule
 # Thus, no manual lookup needed to choose the correct imputation rule:
 
-select ?s ?rule ?var ?day
+select ?s ?rule ?var ?day ?description
 where
 {
 ?s rdfs:label "abc" ;
@@ -15,6 +15,7 @@ where
    d:Has_Imputation ?rule .
 ?rule d:Impute_By ?day .
 ?rule d:ApplicableTo ?var .
+?rule rdfs:label ?description .
 # Note the first imputation rule ends on "S" indicating the study specific context rather than global business rule.
  OPTIONAL { ?s d:Has_Imputation d:ImputeMissingEndDayS }
  OPTIONAL { ?s d:Has_Imputation d:ImputeMissingEndDay }

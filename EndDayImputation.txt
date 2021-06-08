@@ -1,2 +1,2 @@
-abc ImputeMissingEndDay CMENDTC Middle_of_month 
-abc ImputeMissingEndDayS AEENDTC Last_of_month 
+abc|ImputeMissingEndDayS|AEENDTC|"Last_of_month"|"If the partial date is a stop date, a '28/29/30/31' was used for the day (dependent on the month and year)"
+abc|ImputeMissingEndDayS|CMENDTC|"Last_of_month"|"If the partial date is a stop date, a '28/29/30/31' was used for the day (dependent on the month and year)"
