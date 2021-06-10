@@ -1,0 +1,15 @@
+@prefix d: <http://companylink.de/ns#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Definition/Description of Analysis results upon various displays.
+# Basically, content binds display results to SAS code, ADaM datasets/variables etc.
+#   In the following items/identifier resemble CDISC-ARM in syntax:
+
+# Bind SAS procedure code to table 14.3.1:
+d:RD.Table_14-3.01_R2 rdf:type d:AnalysisResult ;
+                      rdf:type d:Result_2 ;
+                      d:Code _:b1 .
+_:b1 d:FileName "Metadata_ARM_RD_Table_14-3.01_R2_code.txt" ;
+     d:Path_to_code "/home/dirk/Dokumente/MDR/" .
