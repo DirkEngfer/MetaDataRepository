@@ -1,3 +1,20 @@
+/*
+   This is an example SAS program to create display 14.3.1 Result no. 2.
+   To do so it takes on metadata SAS code that models the primary efficacy.
+   The only hardcode is a link to your MDR item connecting the statistical model to this output.
+   I have chosen FOPEN to read SAS code as it is more generic in reading files.
+   The other way to read SAS code is by using %INCLUDE of course.
+
+   Benefits:
+   ---------
+
+   - Statistical model code comes from a pre-specified source. No manual typing necessary nor
+        lookup for code template.
+   - At the same time the statistical model code (as part of the MDR) can be used for Define.xml section
+        "Analysis Results Metadata" on the respective SAS output (table 14.3.1 R2).
+        Thus documentation goes along with coding.
+*/
+
 filename inp_fl "/home/dirk/Dokumente/MDR/ARM_code_ADAS-Cog_summary_table.txt" encoding="utf-8" ;
 data _null_;
 infile inp_fl;
