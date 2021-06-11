@@ -13,3 +13,10 @@ d:RD.Table_14-3.01_R2 rdf:type d:AnalysisResult ;
                       d:Code _:b1 .
 _:b1 d:FileName "Metadata_ARM_RD_Table_14-3.01_R2_code.txt" ;
      d:Path_to_code "/home/dirk/Dokumente/MDR/" .
+
+# Bind SAS procedure code to table 14.3.2:
+d:RD.Table_14-3.02_R1 rdf:type d:AnalysisResult ;
+                      rdf:type d:Result_1 ;
+                      d:Code _:b2 .
+_:b2 d:FileName "Metadata_ARM_RD_Table_14-3.02_R1_code.txt" ;
+     d:Path_to_code "/home/dirk/Dokumente/MDR/" .

@@ -1,0 +1,21 @@
+PREFIX d: <http://companylink.de/ns#>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+
+# Retrieve standard SAS code as part of your metadata, to perform ADAS Cog for summary table:
+# Yields blank separated fields, 3 in total.
+# First column = Analysis result ID,
+# Second column= abslolute path to file with SAS code,
+# third column = Filename with extension.
+
+# Another standard SAS program is to read the below retrieved metadata i.e. code used for displays.
+# At the same time, query results can be used directly for CDISC Define.xml section: Analysis-Results-Metadata field "Code".
+select ?s ?path ?file
+where
+{
+?s rdf:type d:AnalysisResult ;
+   d:Code ?code .
+?code d:Path_to_code ?path .
+?code d:FileName ?file .
+}

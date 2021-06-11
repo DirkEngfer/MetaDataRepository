@@ -1,0 +1,8 @@
+PROC GLM DATA = ADQSADAS;
+  WHERE efffl = 'Y' AND
+  anl02fl='Y' AND avisit='Week 24' AND paramcd='ACTOT'; ** ANL02FL ;
+  CLASS trtpn sitegr1;
+  MODEL chg = trtpn sitegr1 BASE;
+  MEANS trtpn;
+  LSMEANS trtpn / OM STDERR PDIFF CL;
+RUN;
