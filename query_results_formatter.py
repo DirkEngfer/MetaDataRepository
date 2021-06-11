@@ -109,3 +109,19 @@ os.remove("./" + outputname)
 os.rename('q_out.txt', outputname)
 
 
+out = open('q_out.txt', 'w')
+outputname = 'ARM_whereclause.txt'
+with open(outputname, 'rt') as f:
+  i = 0
+  for line in f:
+    if i >= 3:
+      if line[0:1] == '|':
+        text = line.replace('|', '').replace('d:', '').replace('"', '')
+        text = ' '.join(filter(None,text.split(' ')))
+        out.write(text)
+    i +=1
+out.close()
+os.remove("./" + outputname)
+os.rename('q_out.txt', outputname)
+
+

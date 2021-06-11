@@ -1,0 +1,20 @@
+PREFIX d: <http://companylink.de/ns#>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+
+# Retrieve WhereClauses from MDR describing data selection conditions:
+# Yields blank separated fields, 3 in total.
+# First column = Analysis result ID,
+# Second column= abslolute path to file with SAS code,
+# third column = Filename with extension.
+
+# query results can be used directly for CDISC Define.xml section: Analysis-Results-Metadata field "WhereClause".
+select ?s ?path ?file
+where
+{
+?s rdf:type d:AnalysisResult ;
+   d:WhereClause ?w .
+?w d:Path_to_code ?path .
+?w d:FileName ?file .
+}

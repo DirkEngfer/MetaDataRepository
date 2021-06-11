@@ -5,4 +5,5 @@ arq --data test.ttl --data imputation_rules.ttl --query value_imputation.rq > LL
 arq --data test.ttl --data imputation_rules.ttl --query ENDTC_DayImputation.rq > EndDayImputation.txt ;
 arq --data imputation_rules.ttl --query impute_missing_start_day.rq > StartDayImputation.txt ;
 arq --data ARM.ttl --query ARM_code_ADAS-Cog_summary_table.rq > ARM_code_ADAS-Cog_summary_table.txt ;
+arq --data ARM.ttl --query ARM_whereclauses.rq > ARM_whereclause.txt ;
 sleep 3 && python query_results_formatter.py ;
