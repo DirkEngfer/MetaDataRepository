@@ -9,7 +9,7 @@
 filename metadata "/home/dirk/Dokumente/MDR/EndDayImputation.txt" encoding="utf-8" ;
 data _null_;
 INFILE metadata dlm='|' dsd truncover;
-INPUT study rulename :$50. applicable_var rule_short  :$50. description  :$50.;
+INPUT study $ rulename :$50. applicable_var $ rule_short  :$50. description  :$50.;
 IF applicable_var = "AEENDTC" THEN DO;
   IF rule_short = "Last_of_month" THEN
   DO;
