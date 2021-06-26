@@ -1,0 +1,11 @@
++ Business rules as metadata in RDF seems flexible/robust enough against updating, extension or remodeling.
++ Staff needed to curate metadata and to setup standard queries (SPARQL) allowing for retrieval of ALL information to
+    map data from one model to another (e.g. CDASH to SDTM).
++ Executing a single shell file accomplishes the retrieval of all metadata needed.
++ In turn, one can run a sequence of standard SAS programs that consume retrieved metadata:
+   - SAS code that is validated and part of the MDR runs automatically without human review.
+       (e.g. code that goes into CDISC ARM1.0 fields like "code" and "whereclause").
+   - According to your SOP, review of SAS log files and output might be required (by human being).
++ Define.xml follows either directly from consuming metadata or from your favorite clinical toolkit.
++ Text passages for the ADRG are a result of SPARQL queries, hence provide standardized input to the documentation specialist.
++ Metadata can also function as a replacement for the statistical analysis plan.
